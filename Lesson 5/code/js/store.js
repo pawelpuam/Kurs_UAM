@@ -17,7 +17,9 @@ if(-1===UAM.utils.getObjectIndex(this.data, value, "content")){
 
 UAM.Store.prototype.updateListItem = function (string) {
 var id = UAM.utils.getObjectIndex(this.data,string,"content")
-this.data[id].selected=1;
-this.selected++;
-this.emit("footerSelectedUpdate", this.selected);
+if(this.data[id].selected===0){
+	this.data[id].selected=1;
+	this.selected++;
+	this.emit("footerSelectedUpdate", this.selected);
+}
 };

@@ -6,10 +6,10 @@ UAM.InputView = function (input_container) {
 	var me =this;
 	this.addTask = function() {
 		var inputText = me.inputBox.value;
-		this.emit("addTask", inputText);
+		me.emit("addTask", inputText);
 		me.inputBox.value = "";
 		};
-	this.buttonView.addEventListener("click", this.addTask.bind(this));
+	this.buttonView.addEventListener("click", this.addTask);
 	
 };
 
